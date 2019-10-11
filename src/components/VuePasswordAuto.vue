@@ -11,12 +11,12 @@ export default {
     const inputs = Array.isArray(context.props.userInputs)
       ? context.props.userInputs
       : [];
-    const strength = zxcvbn(data.props.value, inputs) || 0;
+    const strength = zxcvbn(data.props.value, inputs);
 
     return h(VuePassword, {
       props: {
         ...data.props,
-        strength: strength.score
+        strength: strength ? strength.score : 0
       },
 			on: context.listeners,
 			scopedSlots: context.scopedSlots,
