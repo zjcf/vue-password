@@ -920,9 +920,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   render: function render(h, context) {
     var data = context.data;
     var inputs = Array.isArray(context.props.userInputs) ? context.props.userInputs : [];
-    var strength = external_commonjs_zxcvbn_commonjs2_zxcvbn_root_zxcvbn_default()(data.attrs.value, inputs) || 0;
+    var strength = external_commonjs_zxcvbn_commonjs2_zxcvbn_root_zxcvbn_default()(data.props.value, inputs) || 0;
     return h(VuePassword, {
-      props: _objectSpread({}, data.attrs, {
+      props: _objectSpread({}, data.props, {
         strength: strength.score
       }),
       on: context.listeners,
